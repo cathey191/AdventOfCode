@@ -7,9 +7,12 @@ class Day1
 		int[] depth = Array.ConvertAll(input, int.Parse);
 		int count = 0;
 
-        for (int i = 1; i < depth.Length; i++)
+        for (int i = 1; i < depth.Length - 2; i++)
         {
-            if (depth[i] > depth[i - 1]) 
+			int firstThree = depth[i - 1] + depth[i] + depth[i + 1];
+			int secondThree	= depth[i] + depth[i + 1] + depth[i + 2];
+
+            if (secondThree > firstThree) 
 			{
 				count++;
 			}
